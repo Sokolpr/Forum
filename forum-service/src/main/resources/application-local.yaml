@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: forum-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/forum_db
+    username: peanutsh
+    password: 123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog.yaml
+    enabled: true
+

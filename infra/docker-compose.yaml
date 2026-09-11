@@ -1,0 +1,55 @@
+services:
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: forum_postgres
+    ports:
+      - "${POSTGRES_PORT:-5444}:5435"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-peanutsh}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123}
+      POSTGRES_DB: ${POSTGRES_DB:-forum_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    command:
+      - "postgres"
+      - "-c"
+      - "max_connections=100"
+      - "-c"
+      - "shared_buffers=256MB"
+      - "-c"
+      - "wal_level=logical"
+    networks:
+      - forum-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  forum-service:
+    container_name: forum_service_app
+    build:
+      context: ../forum-service
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://forum_postgres:${POSTGRES_DB:5444}/${POSTGRES_DB:-forum_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-peanutsh}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-123}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+
+
+
+
+
+volumes:
+  postgres_data:
+    name: forum_bd_data
+
+
+
+
+
+
