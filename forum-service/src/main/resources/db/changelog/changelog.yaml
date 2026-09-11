@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2026_09_08__Create_attachments_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы attachments.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_attachments_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_branches_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы branches.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_branches_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_forum_users_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы forum_users.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_forum_users_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_moderation_audit_logs_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы moderation_audit_logs.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_moderation_audit_logs_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_posts_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы posts.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_posts_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_reactions_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы reactions.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_reactions_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_subscriptions_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы subscriptions.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_subscriptions_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
+
+
+  - changeSet:
+      id: 2026_09_08__Create_topics_table.sql
+      author: peanutsh
+      comment: >
+        Создание таблицы topics.
+      sqlFile:
+        path: db/changelog/dbscripts/2026_09_08__Create_topics_table.sql
+        relativeToChangelogFile: true
+        splitStatements: true
+        endDelimiter: ;
